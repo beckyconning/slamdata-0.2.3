@@ -4,16 +4,27 @@ import Prelude
 
 import Data.Generic (Generic, gEq, gCompare)
 import Data.Maybe (Maybe())
-import UI.Notebook.Action (NotebookActionP())
+
+import UI.Notebook.Query (NotebookQuery())
 
 type KeyboardShortcut = String
 
-type SubmenuItem = { label :: String, action :: NotebookActionP Unit, keyboardShortcut :: Maybe KeyboardShortcut }
+type SubmenuItem =
+  { label :: String
+  , action :: NotebookQuery Unit
+  , keyboardShortcut :: Maybe KeyboardShortcut
+  }
 
-type Submenu = { label :: SubmenuLabel, items :: Array SubmenuItem }
+type Submenu =
+  { label :: SubmenuLabel
+  , items :: Array SubmenuItem
+  }
 
 nullSubmenu :: Submenu
-nullSubmenu = { label: SubmenuLabel "", items: [] }
+nullSubmenu =
+  { label: SubmenuLabel ""
+  , items: []
+  }
 
 newtype SubmenuLabel = SubmenuLabel String
 derive instance genericSubmenuLabel :: Generic SubmenuLabel

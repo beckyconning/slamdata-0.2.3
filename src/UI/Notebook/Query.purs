@@ -1,8 +1,8 @@
-module UI.Notebook.Action where
+module UI.Notebook.Query where
 
 import UI.Notebook.Cell.Type (CellType())
 
-data NotebookActionP a
+data NotebookQuery a
   = Rename a
   | Delete a
   | Publish a
