@@ -1,11 +1,12 @@
 module Main where
 
 import Prelude
-import Halogen
 
+import Control.Monad.Aff (runAff)
 import Control.Monad.Eff (Eff())
 import Control.Monad.Eff.Exception (throwException)
-import Control.Monad.Aff (runAff)
+
+import Halogen
 import Halogen.Util (appendToBody)
 
 import UI.Notebook.Component (notebookComponent)

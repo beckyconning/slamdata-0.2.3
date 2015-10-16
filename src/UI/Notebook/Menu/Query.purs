@@ -1,8 +1,7 @@
-module UI.Notebook.Menu.Action where
+module UI.Notebook.Menu.Query where
 
-import Prelude
 import UI.Notebook.Menu.Submenu.Model (SubmenuLabel())
 
-data MenuActionP a
+data MenuQuery a
   = ChooseSubmenu SubmenuLabel a
   | HideSubmenu a
